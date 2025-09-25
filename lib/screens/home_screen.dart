@@ -73,7 +73,7 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 6),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -84,8 +84,8 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    SvgPicture.asset("images/alarmas.svg", width: 22, height: 22, color: kPrimaryBlue),
-                    const Text("Activo", style: TextStyle(fontSize: 12)),
+                    SvgPicture.asset("images/alarmas.svg", width: 42, height: 42, color: kPrimaryBlue),
+
                   ],
                 ),
               ),
@@ -96,10 +96,9 @@ class HomeScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     SvgPicture.asset("images/historial.svg",
-                        width: 22, height: 22, color: Colors.black87),
+                        width: 42, height: 42, color: Colors.black87),
                     const SizedBox(height: 2),
-                    const Text("Historial",
-                        style: TextStyle(fontSize: 12, color: Colors.black87)),
+
                   ],
                 ),
               ),
@@ -110,8 +109,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    SvgPicture.asset("images/hoy.svg", width: 22, height: 22, color: Colors.black87),
-                    const Text("Hoy", style: TextStyle(fontSize: 12)),
+                    SvgPicture.asset("images/hoy.svg", width: 42, height: 42, color: Colors.black87),
                   ],
                 ),
               ),

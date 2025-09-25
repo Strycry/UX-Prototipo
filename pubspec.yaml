@@ -30,5 +30,7 @@ flutter:
     - images/alarmas.svg
     - images/historial.svg
     - images/hoy.svg
+    - images/bell-off.svg
+    - images/repeat.svg
 
 

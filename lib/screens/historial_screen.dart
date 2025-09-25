@@ -71,9 +71,9 @@ class HistorialScreen extends StatelessWidget {
         ),
       ),
 
-      // 🔹 Botón flotante (SIN NOTCH, alineado como en Hoy)
+      // 🔹 Botón flotante (igual que en Hoy y Home)
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 0), // sube un poco el botón
+        padding: const EdgeInsets.only(bottom: 0),
         child: FloatingActionButton(
           backgroundColor: kPrimaryBlue,
           shape: const CircleBorder(),
@@ -85,73 +85,57 @@ class HistorialScreen extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
 
-      // 🔹 Barra inferior con Historial AZUL
-      bottomNavigationBar: SafeArea(
-        child: BottomAppBar(
-          child: SizedBox(
-            height: 64,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 6),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // Activo (gris)
-                  GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, '/home'),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SvgPicture.asset(
-                          "images/alarmas.svg",
-                          width: 22, height: 22,
-                          color: Colors.black87,
-                        ),
-                        const SizedBox(height: 2),
-                        const Text("Activo",
-                            style: TextStyle(fontSize: 12)),
-                      ],
+      // 🔹 Barra inferior (igual que en Home y Hoy, con Historial azul)
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(context, '/home'),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      "images/alarmas.svg",
+                      width: 42,
+                      height: 42,
+                      color: Colors.black87,
                     ),
-                  ),
-                  // Historial (AZUL porque estamos aquí)
-                  GestureDetector(
-                    onTap: () {}, // ya estás aquí
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SvgPicture.asset(
-                          "images/historial.svg",
-                          width: 22, height: 22,
-                          color: kPrimaryBlue,
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          "Historial",
-                          style: TextStyle(
-                              fontSize: 12, color: kPrimaryBlue),
-                        ),
-                      ],
-                    ),
-                  ),
-                  // Hoy (gris)
-                  GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, '/hoy'),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SvgPicture.asset(
-                          "images/hoy.svg",
-                          width: 22, height: 22,
-                          color: Colors.black87,
-                        ),
-                        const SizedBox(height: 2),
-                        const Text("Hoy",
-                            style: TextStyle(fontSize: 12)),
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
+              GestureDetector(
+                onTap: () {}, // Ya estamos en Historial
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      "images/historial.svg",
+                      width: 42,
+                      height: 42,
+                      color: kPrimaryBlue, // 🔹 Azul activo
+                    ),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(context, '/hoy'),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      "images/hoy.svg",
+                      width: 42,
+                      height: 42,
+                      color: Colors.black87,
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),
