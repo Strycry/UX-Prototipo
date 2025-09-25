@@ -9,6 +9,9 @@ import 'screens/medicamento_dias_screen.dart';
 import 'screens/rango_horas_screen.dart';
 import 'screens/rango_dias_screen.dart';
 import 'screens/alarma_creada_screen.dart';
+import 'screens/hoy_screen.dart';
+import 'screens/historial_screen.dart';
+import 'screens/perfil_screen.dart';
 
 const Color kPrimaryBlue = Color(0xFF3B81F4);
 const Color kSecondaryBlue = Color(0xFF1E3FAE);
@@ -42,6 +45,9 @@ class MyApp extends StatelessWidget {
         '/rango-horas': (context) => const RangoDeHorasScreen(),
         '/rango-dias': (context) => const RangoDeDiasScreen(),
         '/alarma-creada': (context) => const AlarmaCreadaScreen(),
+        '/historial': (context) => const HistorialScreen(),
+        '/perfil': (context) => const PerfilScreen(),
+        '/hoy': (context) => const HoyScreen()
 
       },
     );
