@@ -1,111 +1,50 @@
-# 🚀 Proyecto Next.js
-
-Este proyecto fue creado con [Next.js](https://nextjs.org/) y extendido con:
-
-- [**shadcn/ui**](https://ui.shadcn.com) → librería de componentes accesibles con Tailwind.  
-- [**Recharts**](https://recharts.org/en-US/) → librería de gráficos y visualización de datos.  
-
----
-
-## 📦 Requisitos previos
-
-Antes de comenzar asegúrate de tener instalado:
-
-- [Node.js](https://nodejs.org/) (>= 18 recomendado).  
-- Un gestor de paquetes: `npm`, `pnpm` o `yarn`.  
-
----
-
-## ⚙️ Instalación
-
+# PillReminder
+Aplicación móvil desarrollada en **Flutter** para gestionar recordatorios de medicamentos. Incluye: - Vista de **Alarmas activas**. - Vista de **Hoy**, con medicamentos del día y controles interactivos. - **Historial** con registro de tomas, omitidas o pospuestas.
+## Requisitos previos
+Antes de comenzar asegúrate de tener instalado: - [Flutter](https://docs.flutter.dev/get-started/install) (>= 3.19 recomendado). - [Android Studio](https://developer.android.com/studio) o VS Code con la extensión de Flutter. - Un emulador Android (por ejemplo: **Pixel 9 Pro API 36.0**) o un dispositivo físico. - **Java JDK 11 o superior** (Android Studio ya trae uno por defecto). Verifica tu entorno con:
+```bash
+flutter doctor
+```
+## Instalación
 Clona el repositorio e instala las dependencias:
-
 ```bash
-git clone https://github.com/tu-usuario/tu-repo.git
-cd tu-repo
-
-# con npm
-npm install
-
-# o con pnpm
-pnpm install
-
-# o con yarn
-yarn install
+git clone https://github.com/tu-usuario/pillreminder.git
+cd pillreminder
+flutter pub get
 ```
-
----
-
-## ▶️ Ejecutar en desarrollo
-
-Para iniciar el servidor de desarrollo:
-
+## Librerías principales
+* **Flutter Material** → componentes base para UI. * **flutter_svg** → manejo de iconos e imágenes en formato SVG. Si necesitas instalar manualmente `flutter_svg`:
 ```bash
-npm run dev
-# o
-pnpm dev
-# o
-yarn dev
+flutter pub add flutter_svg
 ```
-
-Abre en el navegador: [http://localhost:3000](http://localhost:3000)
-
----
-
-## 🛠️ Librerías principales
-
-- **Next.js** → framework de React con soporte SSR/SSG.  
-- **Tailwind CSS** → utilidades de estilos.  
-- **shadcn/ui** → componentes preconstruidos.  
-  - Para agregar componentes, usa los siguientes comandos:  
-
-    ```bash
-    npx shadcn@latest add button
-    npx shadcn@latest add input
-    npx shadcn@latest add label
-    npx shadcn@latest add badge
-    npx shadcn@latest add card
-    ```
-
-- **Recharts** → gráficos y visualización.  
-  - Instalación (si no está en tu proyecto):  
-    ```bash
-    npm install recharts
-    ```
-
----
-
-## 🚀 Build y producción
-
-Genera la build optimizada:
-
+## Ejecutar en desarrollo
+Para iniciar la aplicación en un emulador o dispositivo conectado:
 ```bash
-npm run build
+flutter run
 ```
-
-Ejecuta en modo producción:
-
+Si quieres generar un APK para instalarlo en cualquier teléfono Android:
 ```bash
-npm start
+flutter build apk --release
 ```
-
----
-
-## 📚 Recursos útiles
-
-- [Documentación de Next.js](https://nextjs.org/docs)  
-- [Documentación de shadcn/ui](https://ui.shadcn.com/docs)  
-- [Documentación de Recharts](https://recharts.org/en-US/)  
-
----
-
-## ☁️ Despliegue en Vercel
-
-La forma más sencilla de desplegar este proyecto es con [Vercel](https://vercel.com):
-
-1. Conecta tu repositorio de GitHub en Vercel.  
-2. Selecciona el proyecto y deja la configuración por defecto.  
-3. El build se ejecutará automáticamente (`npm install`, `npm run build`, `npm start`).  
-4. Tu aplicación estará disponible en un dominio de Vercel.  
-
----
+El archivo se generará en:
+```
+build/app/outputs/flutter-apk/app-release.apk
+```
+También puedes descargar directamente la última versión lista para instalar desde la carpeta `apk/` del repositorio si prefieres probarla sin compilarla.
+## Estructura del proyecto
+```
+lib/
+│── main.dart                # Punto de entrada
+│── screens/
+│   ├── home_screen.dart     # Pantalla principal (Alarmas / Medicamentos)
+│   ├── hoy_screen.dart      # Pantalla con los recordatorios de hoy
+│   └── historial_screen.dart# Historial de tomas
+│                             #demas pantallas
+assets/
+│── images/                  # Iconos en formato SVG
+apk/                         # APKs generados listos para instalar
+```
+##  Recursos útiles
+* [Documentación oficial de Flutter](https://docs.flutter.dev/) * [Documentación de flutter_svg](https://pub.dev/packages/flutter_svg) * [Guía para compilar APKs](https://docs.flutter.dev/deployment/android)
+## Autores
+* **David Carrillo** * **Juan Suarez**
